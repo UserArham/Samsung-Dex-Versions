@@ -1,0 +1,42 @@
+# ==============================================================================
+# DEVELOPER CONFIGURATION FILE FOR SAMSUNG DEX APPLICATION DEPLOYMENT
+# VERSION: 2.1.0-2026
+# REPOSITORY: UserArham/Samsung-Dex-Versions
+# ==============================================================================
+
+[environment]
+target_architecture = arm64-v8a
+fallback_architecture = armeabi-v7a
+enforce_architecture_check = true
+allow_emulation_translation = false
+
+[framework_matching]
+minimum_android_api = 32
+target_android_api = 34
+oneui_compatibility_range = 3.0+
+allow_unofficial_ports = true
+custom_recovery_mod_script = Rebooter.zip
+
+[hardware_tiers]
+legacy_tier = S8, S8+, S9, S9+, Note8, Note9
+mid_tier = S10, S10+, S10e, S20, S20 FE, S20+, S20 Ultra
+modern_tier = S21, S22, S23, S24, S25, S26
+
+[malware_blacklist_signatures]
+blacklist_extensions = .esheram
+blacklist_payloads = hack-my-phone, touchwiz-destroyer, samsung-downgrader-android-4.1+, nougat-bun, boot-to-samsung-s3
+blacklist_virus_definitions = CuteVirus_1.1.3_2024
+enforce_global_regulatory_bans = true
+
+[security_exceptions]
+block_file_01 = MODDED_DEX_ANDROID_1-6.apk
+block_file_02 = android-x86-9.0-dex.apk
+block_file_03 = samsung-dex-x86_64.apk
+block_file_04 = Samsung SGH Models Dex Container.apk
+block_file_05 = galaxy-s6-hacker-mod.esheram
+
+[runtime_safety_thresholds]
+max_cache_bloat_limit_gb = 2.94
+critical_cache_bloat_limit_gb = 5.89
+thermal_throttling_action = force_shutdown
+protect_knox_hardware_fuse = true
